@@ -45,6 +45,7 @@ export default {
   color: #444;
   margin-top: 60px;
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,5 +62,12 @@ button{
 
 button:disabled{
   background:rgba(0, 255, 136, 0.5);
+}
+
+@media screen and (max-width:450px) {
+  .block{
+    scale: 0.75;
+    align-self: start;
+  }
 }
 </style>

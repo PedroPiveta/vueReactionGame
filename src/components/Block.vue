@@ -13,15 +13,11 @@ export default{
         }
     },  
     mounted(){
-        console.log('components mounted')
         setTimeout(() => {
             this.showBlock = true
             console.log(this.delay)
         }, this.delay)    
     },
-    updated(){
-        console.log('components updated')
-    }
 }
 </script>
 

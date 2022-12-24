@@ -1,9 +1,10 @@
 <script>
 import Block from './components/Block.vue'
+import Results from './components/Results.vue'
 
 export default {
   name: 'App',
-  components: { Block },
+  components: { Block , Results },
   data(){
     return{
       isPlaying: false,
@@ -31,7 +32,7 @@ export default {
   <h1>Ninja Reaction Timer</h1>
   <button @click="start" :disabled="isPlaying">Play</button>
   <Block v-if="isPlaying" :delay="delay" @end="endGame" />
-  <p v-if="showResults">Reaction time {{score}} ms</p>
+  <Results v-if="showResults" :score="score"/>
 
 </template>
 
@@ -43,6 +44,11 @@ export default {
   text-align: center;
   color: #444;
   margin-top: 60px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 button{

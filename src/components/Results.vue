@@ -1,17 +1,28 @@
 <template>
     <p @end="endGame">Reaction time {{score}} ms</p>
-    <div v-if="score < 400">
-        <p>pretty fast :)</p>
-    </div>
-    <div v-else>
-        <p>you're too slow :(</p>
+    <div class="rank">
+        {{ rank }}
     </div>
 </template>
 
 <script>
-    export default {
-        props: ['score']
+export default {
+    props: ['score'],
+    data(){
+        return{
+            rank: null
+        }
+    },
+    mounted(){
+        if (this.score <250) {
+            this.rank = "Wow, that's really fast!"
+        } else if(this.score < 400){
+            this.rank = "Pretty good!"
+        } else {
+            this.rank = "You're too slow"
+        }
     }
+}
 </script>
 
 <style scoped>

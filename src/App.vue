@@ -66,7 +66,7 @@ button:disabled{
 
 @media screen and (max-width:450px) {
   .block{
-    scale: 0.75;
+    width: 300px;
     align-self: start;
   }
 }
